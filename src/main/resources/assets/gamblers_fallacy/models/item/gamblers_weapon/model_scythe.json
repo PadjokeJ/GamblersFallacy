@@ -1,0 +1,7 @@
+{
+  "parent": "gamblers_fallacy:item/big_weapon",
+  "textures": {
+    "layer0": "gamblers_fallacy:item/gamblers_handle",
+    "layer1": "gamblers_fallacy:item/gamblers_scythe_blade"
+  }
+}

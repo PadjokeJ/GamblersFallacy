@@ -3,5 +3,11 @@
   "textures": {
     "layer0": "gamblers_fallacy:item/gamblers_handle",
     "layer1": "gamblers_fallacy:item/gamblers_blade"
-  }
+  },
+  "overrides": [
+    { "predicate": { "gamblers_fallacy:state": 0 }, "model": "gamblers_fallacy:item/gamblers_weapon/model_axe" },
+    { "predicate": { "gamblers_fallacy:state": 0.25 }, "model": "gamblers_fallacy:item/gamblers_weapon/model_glaive" },
+    { "predicate": { "gamblers_fallacy:state": 0.5 }, "model": "gamblers_fallacy:item/gamblers_weapon/model_scythe" },
+    { "predicate": { "gamblers_fallacy:state": 0.75 }, "model": "gamblers_fallacy:item/gamblers_weapon/model_sword" }
+  ]
 }

@@ -9,18 +9,21 @@
 	],
 	"contact": {
 		"homepage": "https://padjokej.dev/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/PadjokeJ/GamblersFallacy"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/gamblers-fallacy/icon.png",
+	"license": "MIT",
+	"icon": "assets/gamblers_fallacy/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"dev.padjokej.gamblersfallacy.GamblersFallacy"
+		],
+		"client": [
+			"dev.padjokej.gamblersfallacy.ModClient"
 		]
 	},
 	"mixins": [
-		"gamblers-fallacy.mixins.json"
+		"gamblers_fallacy.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.9",
