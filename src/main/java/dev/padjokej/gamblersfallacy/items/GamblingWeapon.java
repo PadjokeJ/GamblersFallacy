@@ -1,6 +1,7 @@
 package dev.padjokej.gamblersfallacy.items;
 
 import dev.padjokej.gamblersfallacy.component.ModDataComponentTypes;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.AttributeModifiersComponent;
 import net.minecraft.entity.LivingEntity;
@@ -9,7 +10,6 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
@@ -21,7 +21,6 @@ import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.World;
 
 public class GamblingWeapon extends SwordItem {
-
     public boolean isLifesteal = false;
     public boolean isBerserk = false;
     public boolean isIcy = false;
@@ -32,15 +31,13 @@ public class GamblingWeapon extends SwordItem {
     public int getState() {
         return this.state;
     }
-    public int setState(int state, ItemStack stack)
+    public void setState(int state, ItemStack stack, PlayerEntity player)
     {
         this.state = state;
         stack.set(ModDataComponentTypes.WEAPON_STATE, ConstantIntProvider.create(state));
-        return state;
     }
 
     public GamblingWeapon(ToolMaterial toolMaterial, Settings settings) {
-
         super(toolMaterial, settings);
     }
 
@@ -79,35 +76,74 @@ public class GamblingWeapon extends SwordItem {
     void RollState(World world, PlayerEntity player, Hand hand) {
         RollEffect(world, player);
         RollEnchant(world, player);
-        RollType(world, player);
+        RollType(world, player, hand);
     }
 
 
-    void RollType(World world, PlayerEntity player) {
+    void RollType(World world, PlayerEntity player, Hand hand) {
         float rnd = world.random.nextFloat();
-        ItemStack stack = player.getActiveItem();
+        ItemStack stack = player.getStackInHand(hand);
+
         if (rnd <= 0.25f) {
             //axe
             player.sendMessage(Text.literal("axe"));
-
-            setState(0, stack);
+            stack.set(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                    .add(EntityAttributes.GENERIC_ATTACK_SPEED,
+                    new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, -3,
+                            EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                    .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                            new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, 9,
+                                    EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                    .build());
+            setState(0, stack, player);
             return;
         }
         if (rnd <= 0.5f) {
             //glaive
             player.sendMessage(Text.literal("glaive"));
-            setState(1, stack);
+            stack.set(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(EntityAttributes.GENERIC_ATTACK_SPEED,
+                            new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, -2,
+                                    EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                            .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                            new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, 6,
+                                    EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                            .add(EntityAttributes.PLAYER_ENTITY_INTERACTION_RANGE,
+                            new EntityAttributeModifier(Identifier.ofVanilla("base_entity_interaction_range"), 1,
+                                    EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                    .build());
+            setState(1, stack, player);
             return;
         }
         if (rnd <= 0.75f) {
             //scythe
             player.sendMessage(Text.literal("scythe"));
-            setState(2, stack);
+            stack.set(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                    .add(EntityAttributes.GENERIC_ATTACK_SPEED,
+                            new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, -3,
+                                    EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                    .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                            new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, 8,
+                                    EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                    .add(EntityAttributes.PLAYER_ENTITY_INTERACTION_RANGE,
+                            new EntityAttributeModifier(Identifier.ofVanilla("base_entity_interaction_range"), 0.5,
+                                    EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                    .build());
+            setState(2, stack, player);
             return;
         }
         //sword
         player.sendMessage(Text.literal("sword"));
-        setState(3, stack);
+        stack.set(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                .add(EntityAttributes.GENERIC_ATTACK_SPEED,
+                        new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, -2.4,
+                                EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                        new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, 7,
+                                EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                .build());
+        setState(3, stack, player);
+
     }
 
     void RollEffect(World world, PlayerEntity player) {
