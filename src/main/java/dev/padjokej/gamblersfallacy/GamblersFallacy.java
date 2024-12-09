@@ -2,13 +2,8 @@ package dev.padjokej.gamblersfallacy;
 
 import dev.padjokej.gamblersfallacy.component.ModDataComponentTypes;
 import dev.padjokej.gamblersfallacy.items.ModWeapons;
-import dev.padjokej.gamblersfallacy.utils.ModModelPredicates;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.client.item.ModelPredicateProviderRegistry;
-import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
