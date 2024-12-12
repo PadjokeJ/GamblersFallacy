@@ -1,5 +1,6 @@
 package dev.padjokej.gamblersfallacy;
 
+import dev.padjokej.gamblersfallacy.block.ModBlocks;
 import dev.padjokej.gamblersfallacy.component.ModDataComponentTypes;
 import dev.padjokej.gamblersfallacy.items.ModWeapons;
 import net.fabricmc.api.ModInitializer;
@@ -23,6 +24,8 @@ public class GamblersFallacy implements ModInitializer {
 		// Proceed with mild caution.
 		ModWeapons.registerModWeapons();
 		ModDataComponentTypes.registerDataComponentTypes();
+
+		ModBlocks.registerModBlocks();
 
 		LOGGER.info("Hello Fabric world!");
 	}
