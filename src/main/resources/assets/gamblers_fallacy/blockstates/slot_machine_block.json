@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "gamblers_fallacy:block/slot_machine_block"
+    },
+    "facing=south": {
+      "model": "gamblers_fallacy:block/slot_machine_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gamblers_fallacy:block/slot_machine_block",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "gamblers_fallacy:block/slot_machine_block",
+      "y": 90
     }
   }
 }
