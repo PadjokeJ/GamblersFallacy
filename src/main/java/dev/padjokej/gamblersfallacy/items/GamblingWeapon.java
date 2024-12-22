@@ -13,6 +13,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
@@ -72,6 +74,8 @@ public class GamblingWeapon extends SwordItem {
         RollState(world, user, hand);
         return TypedActionResult.success(user.getStackInHand(hand));
     }
+
+
 
     void RollState(World world, PlayerEntity player, Hand hand) {
         RollEffect(world, player);
@@ -189,20 +193,20 @@ public class GamblingWeapon extends SwordItem {
 
         if (rnd <= 0.25f) {
             this.isLifesteal = true;
-            player.sendMessage(Text.literal("Lifesteal active"));
+            world.playSound((PlayerEntity) null, player.getBlockPos(), SoundEvents.ENTITY_ZOMBIE_VILLAGER_CONVERTED, SoundCategory.BLOCKS, 1f, 0.8f - (0.5f * world.random.nextFloat()));
             return;
         }
         if (rnd <= 0.5f) {
             this.isBerserk = true;
-            player.sendMessage(Text.literal("Berserk active"));
+            world.playSound((PlayerEntity) null, player.getBlockPos(), SoundEvents.ENTITY_WOLF_GROWL, SoundCategory.BLOCKS, 1f, 0.6f - (0.5f * world.random.nextFloat()));
             return;
         }
         if (rnd <= 0.75f) {
             this.isIcy = true;
-            player.sendMessage(Text.literal("Ice active"));
+            world.playSound((PlayerEntity) null, player.getBlockPos(), SoundEvents.ENTITY_PLAYER_HURT_FREEZE, SoundCategory.BLOCKS, 1f, 0.8f - (0.5f * world.random.nextFloat()));
             return;
         }
         this.isSpicy = true;
-        player.sendMessage(Text.literal("Fire active"));
+        world.playSound((PlayerEntity) null, player.getBlockPos(), SoundEvents.ENTITY_ZOMBIE_VILLAGER_CURE, SoundCategory.BLOCKS, 1f, 1f + (0.5f * world.random.nextFloat()));
     }
 }
