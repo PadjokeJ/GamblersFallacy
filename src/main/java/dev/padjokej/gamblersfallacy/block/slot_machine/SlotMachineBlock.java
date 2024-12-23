@@ -30,7 +30,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.text.html.BlockView;
 
@@ -80,7 +79,6 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
         return SHAPE;
     }
 
-    @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return validateTicker(type, ModBlockEntities.SLOT_MACHINE_BLOCK_ENTITY_BLOCK_ENTITY,
