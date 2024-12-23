@@ -3,6 +3,7 @@ package dev.padjokej.gamblersfallacy.block.slot_machine;
 import com.mojang.serialization.MapCodec;
 import dev.padjokej.gamblersfallacy.GamblersFallacy;
 import dev.padjokej.gamblersfallacy.block.entity.ModBlockEntities;
+import dev.padjokej.gamblersfallacy.items.GamblingWeapon;
 import dev.padjokej.gamblersfallacy.items.ModItems;
 import dev.padjokej.gamblersfallacy.items.ModWeapons;
 import net.minecraft.block.*;
@@ -14,12 +15,15 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
@@ -89,15 +93,32 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
         ItemStack result;
         for(int i = 0; i < amount; i++){
             result = Roll(player, serverWorld, pos);
-            if (result != null){
+            if (result != null) {
+                if (result.getItem() instanceof GamblingWeapon gamblingWeapon) {
+                    serverWorld.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_TRIAL_SPAWNER_EJECT_ITEM, SoundCategory.BLOCKS, 1f, 0.2f);
+                    serverWorld.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_BELL_RESONATE, SoundCategory.BLOCKS, 1f, 0.4f);
+                    serverWorld.playSound((PlayerEntity) null, pos, SoundEvent.of(SoundEvents.ITEM_TRIDENT_THUNDER.value().getId()), SoundCategory.BLOCKS, 1f, 0.1f);
+
+                    serverWorld.spawnParticles(ParticleTypes.OMINOUS_SPAWNING,
+                            pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5,
+                            80, 0, 0, 0, 1);
+                    serverWorld.spawnParticles(ParticleTypes.NAUTILUS,
+                            pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5,
+                            80, 0, 0, 0, 1);
+                    serverWorld.spawnParticles(ParticleTypes.TOTEM_OF_UNDYING,
+                            pos.getX(), pos.getY() + 1, pos.getZ(),
+                            20, 0, 0, 0, .5);
+                } else {
+                    serverWorld.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_TRIAL_SPAWNER_EJECT_ITEM, SoundCategory.BLOCKS, 1f, 1f);
+                    serverWorld.spawnParticles(ParticleTypes.TOTEM_OF_UNDYING, pos.getX(), pos.getY() + 0.5, pos.getZ(), 200, 0, 0, 0, 1);
+                }
                 player.getInventory().offerOrDrop(result);
-                serverWorld.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_TRIAL_SPAWNER_EJECT_ITEM, SoundCategory.BLOCKS, 1f, 1f);
-                serverWorld.spawnParticles(ParticleTypes.TOTEM_OF_UNDYING, pos.getX(), pos.getY() + 0.5, pos.getZ(), 200, 0, 0, 0, 1);
             }
         }
     }
     ItemStack Roll(PlayerEntity player, ServerWorld serverWorld, BlockPos pos){
         float rnd = serverWorld.random.nextFloat();
+
 
         if (rnd <= 1f/10000f){
             return new ItemStack(ModWeapons.GAMBLING_WEAPON, 1);
@@ -165,7 +186,7 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
                 return ActionResult.SUCCESS;
             }
             var particlePos = Vec3d.ofCenter(pos);
-            serverWorld.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_ANVIL_FALL, SoundCategory.BLOCKS, 1f, 1f);
+            serverWorld.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_ANVIL_LAND, SoundCategory.BLOCKS, 1f, 1f);
             serverWorld.spawnParticles(ParticleTypes.LARGE_SMOKE, particlePos.getX(), particlePos.getY() + 0.5, particlePos.getZ(), 1, 0, .2, 0, 0);
             return ActionResult.FAIL;
         }
