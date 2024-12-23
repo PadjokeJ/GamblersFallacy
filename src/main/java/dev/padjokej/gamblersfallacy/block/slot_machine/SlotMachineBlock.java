@@ -3,6 +3,7 @@ package dev.padjokej.gamblersfallacy.block.slot_machine;
 import com.mojang.serialization.MapCodec;
 import dev.padjokej.gamblersfallacy.GamblersFallacy;
 import dev.padjokej.gamblersfallacy.block.entity.ModBlockEntities;
+import dev.padjokej.gamblersfallacy.component.ModCCAComponents;
 import dev.padjokej.gamblersfallacy.items.GamblingWeapon;
 import dev.padjokej.gamblersfallacy.items.ModItems;
 import dev.padjokej.gamblersfallacy.items.ModWeapons;
@@ -118,11 +119,15 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
     }
     ItemStack Roll(PlayerEntity player, ServerWorld serverWorld, BlockPos pos){
         float rnd = serverWorld.random.nextFloat();
+        player.getComponent(ModCCAComponents.PITY).increment();
 
+        if(player.getComponent(ModCCAComponents.PITY).getValue() > 4000){
+            player.getComponent(ModCCAComponents.PITY).resetValue();
+            return new ItemStack(ModWeapons.GAMBLING_WEAPON, 1);
+        }
 
         if (rnd <= 1f/10000f){
             return new ItemStack(ModWeapons.GAMBLING_WEAPON, 1);
-
         }
         if (rnd <= 1f/5000f){
             return new ItemStack(Items.ANCIENT_DEBRIS, 1);

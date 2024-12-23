@@ -2,6 +2,7 @@ package dev.padjokej.gamblersfallacy;
 
 import dev.padjokej.gamblersfallacy.block.ModBlocks;
 import dev.padjokej.gamblersfallacy.block.entity.ModBlockEntities;
+import dev.padjokej.gamblersfallacy.component.ModCCAComponents;
 import dev.padjokej.gamblersfallacy.component.ModDataComponentTypes;
 import dev.padjokej.gamblersfallacy.items.ModItemGroup;
 import dev.padjokej.gamblersfallacy.items.ModItems;
@@ -25,6 +26,7 @@ public class GamblersFallacy implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModItemGroup.registerItemGroups();
+		ModDataComponentTypes.registerDataComponentTypes();
 
 
 		LOGGER.info("Hello Fabric world!");
