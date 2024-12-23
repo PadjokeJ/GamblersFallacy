@@ -50,20 +50,20 @@ public class GamblingWeapon extends SwordItem {
         if (target instanceof LivingEntity attacked) {
             if (this.isLifesteal) {
                 double damage = attacker.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
-                attacker.heal(0.4F * (float) damage);
+                attacker.heal(0.25F * (float) damage);
             }
             if (this.isIcy) {
                 attacked.addStatusEffect(new StatusEffectInstance(
                         StatusEffects.SLOWNESS,
-                        100, 1
+                        80, 2
                 ));
             }
             if (this.isBerserk) {
-                double damage = (attacker.getMaxHealth() - attacker.getHealth()) * 0.35F;
+                double damage = (attacker.getMaxHealth() - attacker.getHealth()) * 0.15F;
                 attacked.setHealth(attacked.getHealth() - (float) damage);
             }
             if (this.isSpicy) {
-                attacked.setFireTicks(50);
+                attacked.setFireTicks(80);
             }
         }
     }

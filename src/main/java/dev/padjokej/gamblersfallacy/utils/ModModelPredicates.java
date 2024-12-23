@@ -14,11 +14,12 @@ public class ModModelPredicates {
     public static void registerModelPredicateProviders() {
         ModelPredicateProviderRegistry.register(ModWeapons.GAMBLING_WEAPON, Identifier.of(GamblersFallacy.MOD_ID, "state"),
                 (stack, world, entity, seed) -> {
-            if (entity == null) {
-                return 0;
-            }
+
             if (stack.getItem() instanceof GamblingWeapon gamblingWeapon) {
                 return gamblingWeapon.getState() / 4f;
+            }
+            if (entity == null) {
+                return 0;
             }
             return 0;
         });
