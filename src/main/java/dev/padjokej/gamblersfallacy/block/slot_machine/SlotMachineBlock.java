@@ -39,7 +39,7 @@ import net.minecraft.world.World;
 import javax.swing.text.html.BlockView;
 
 public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProvider{
-
+    public static final int maxPity = 4000;
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
 
@@ -119,12 +119,10 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
     }
     ItemStack Roll(PlayerEntity player, ServerWorld serverWorld, BlockPos pos){
         float rnd = serverWorld.random.nextFloat();
-        player.getComponent(ModCCAComponents.PITY).increment();
 
-        if(player.getComponent(ModCCAComponents.PITY).getValue() > 4000){
-            player.getComponent(ModCCAComponents.PITY).resetValue();
-            return new ItemStack(ModWeapons.GAMBLING_WEAPON, 1);
-        }
+
+
+
 
         if (rnd <= 1f/10000f){
             return new ItemStack(ModWeapons.GAMBLING_WEAPON, 1);
@@ -159,6 +157,12 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
 
         var particlePos = Vec3d.ofCenter(pos);
         serverWorld.spawnParticles(ParticleTypes.ANGRY_VILLAGER, particlePos.getX(), particlePos.getY() + 0.5, particlePos.getZ(), 1, 0.2, 0, 0.2, 0);
+
+        if(ModCCAComponents.useSlotMachine(player)){
+            ModCCAComponents.resetPity(player);
+            return new ItemStack(ModWeapons.GAMBLING_WEAPON, 1);
+        }
+
         return null;
     }
 

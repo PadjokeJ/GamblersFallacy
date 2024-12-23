@@ -42,6 +42,6 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"cardinal-components-api": ">=6.1.1"
 	}
 }
