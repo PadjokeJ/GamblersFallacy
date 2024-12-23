@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# ",
+    "SL",
+    "_ "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:spruce_planks"
+    },
+    "S": {
+      "item": "gamblers_fallacy:chip"
+    },
+    "L": {
+      "item": "minecraft:lever"
+    },
+    "_": {
+      "item": "minecraft:spruce_slab"
+    }
+  },
+  "result": {
+    "id": "gamblers_fallacy:slot_machine_block",
+    "count": 1
+  }
+}
