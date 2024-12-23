@@ -90,9 +90,7 @@ public class GamblingWeapon extends SwordItem {
         float rnd = world.random.nextFloat();
         ItemStack stack = player.getStackInHand(hand);
 
-        if (rnd <= 0.25f) {
-            //axe
-            player.sendMessage(Text.literal("axe"));
+        if (rnd <= 0.25f) { // axe
             stack.set(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
                     .add(EntityAttributes.GENERIC_ATTACK_SPEED,
                     new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, -3,
@@ -104,9 +102,7 @@ public class GamblingWeapon extends SwordItem {
             setState(0, stack, player);
             return;
         }
-        if (rnd <= 0.5f) {
-            //glaive
-            player.sendMessage(Text.literal("glaive"));
+        if (rnd <= 0.5f) { // glaive
             stack.set(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
                             .add(EntityAttributes.GENERIC_ATTACK_SPEED,
                             new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, -2,
@@ -121,9 +117,7 @@ public class GamblingWeapon extends SwordItem {
             setState(1, stack, player);
             return;
         }
-        if (rnd <= 0.75f) {
-            //scythe
-            player.sendMessage(Text.literal("scythe"));
+        if (rnd <= 0.75f) { // scythe
             stack.set(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
                     .add(EntityAttributes.GENERIC_ATTACK_SPEED,
                             new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, -3,
@@ -137,9 +131,7 @@ public class GamblingWeapon extends SwordItem {
                     .build());
             setState(2, stack, player);
             return;
-        }
-        //sword
-        player.sendMessage(Text.literal("sword"));
+        } // sword
         stack.set(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED,
                         new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, -2.4,
