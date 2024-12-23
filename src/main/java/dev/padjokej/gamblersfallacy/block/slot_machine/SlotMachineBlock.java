@@ -167,7 +167,7 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
                 return ActionResult.SUCCESS;
             }
             var particlePos = Vec3d.ofCenter(pos);
-            serverWorld.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_ANVIL_BREAK, SoundCategory.BLOCKS, 1f, 1f);
+            serverWorld.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_ANVIL_FALL, SoundCategory.BLOCKS, 1f, 1f);
             serverWorld.spawnParticles(ParticleTypes.LARGE_SMOKE, particlePos.getX(), particlePos.getY() + 0.5, particlePos.getZ(), 1, 0, .2, 0, 0);
             return ActionResult.FAIL;
         }
