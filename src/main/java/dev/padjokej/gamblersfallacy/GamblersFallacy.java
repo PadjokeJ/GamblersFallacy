@@ -7,6 +7,7 @@ import dev.padjokej.gamblersfallacy.component.ModDataComponentTypes;
 import dev.padjokej.gamblersfallacy.items.ModItemGroup;
 import dev.padjokej.gamblersfallacy.items.ModItems;
 import dev.padjokej.gamblersfallacy.items.ModWeapons;
+import dev.padjokej.gamblersfallacy.stats.Stats;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -27,7 +28,8 @@ public class GamblersFallacy implements ModInitializer {
 		ModItems.registerModItems();
 		ModItemGroup.registerItemGroups();
 		ModDataComponentTypes.registerDataComponentTypes();
-
+		ModCCAComponents.registerCCAComponents();
+		Stats.registerModStats();
 
 		LOGGER.info("Hello Fabric world!");
 	}

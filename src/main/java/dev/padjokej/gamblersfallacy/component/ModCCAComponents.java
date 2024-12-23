@@ -29,4 +29,8 @@ public class ModCCAComponents implements EntityComponentInitializer {
     public static void resetPity(Entity provider){
         PITY.get(provider).resetValue();
     }
+
+    public static void registerCCAComponents() {
+        GamblersFallacy.LOGGER.info("Registering CCA Component Types for " + GamblersFallacy.MOD_ID);
+    }
 }

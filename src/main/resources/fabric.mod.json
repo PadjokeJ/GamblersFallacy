@@ -42,6 +42,6 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"cardinal-components-api": ">=6.1.1"
+		"cardinal-components": ">=6.1.1"
 	}
 }

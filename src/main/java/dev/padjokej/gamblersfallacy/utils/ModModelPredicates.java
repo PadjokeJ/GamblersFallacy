@@ -16,7 +16,7 @@ public class ModModelPredicates {
                 (stack, world, entity, seed) -> {
 
             if (stack.getItem() instanceof GamblingWeapon gamblingWeapon) {
-                return gamblingWeapon.getState() / 4f;
+                return gamblingWeapon.getState();
             }
             if (entity == null) {
                 return 0;

@@ -21,6 +21,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.floatprovider.ConstantFloatProvider;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.World;
 
@@ -30,15 +31,15 @@ public class GamblingWeapon extends SwordItem {
     public boolean isIcy = false;
     public boolean isSpicy = false;
 
-    public int state;
+    public float state;
 
-    public int getState() {
+    public float getState() {
         return this.state;
     }
     public void setState(int state, ItemStack stack, PlayerEntity player)
     {
-        this.state = state;
-        stack.set(ModDataComponentTypes.WEAPON_STATE, ConstantIntProvider.create(state));
+        this.state = state / 4f;
+        stack.set(ModDataComponentTypes.WEAPON_STATE, ConstantFloatProvider.create(state / 4f));
     }
 
     public GamblingWeapon(ToolMaterial toolMaterial, Settings settings) {

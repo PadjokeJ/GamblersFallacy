@@ -7,6 +7,7 @@ import dev.padjokej.gamblersfallacy.component.ModCCAComponents;
 import dev.padjokej.gamblersfallacy.items.GamblingWeapon;
 import dev.padjokej.gamblersfallacy.items.ModItems;
 import dev.padjokej.gamblersfallacy.items.ModWeapons;
+import dev.padjokej.gamblersfallacy.stats.Stats;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -16,7 +17,6 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
@@ -24,7 +24,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
@@ -120,7 +119,7 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
     ItemStack Roll(PlayerEntity player, ServerWorld serverWorld, BlockPos pos){
         float rnd = serverWorld.random.nextFloat();
 
-
+        player.incrementStat(Stats.GAMBLED);
 
 
 

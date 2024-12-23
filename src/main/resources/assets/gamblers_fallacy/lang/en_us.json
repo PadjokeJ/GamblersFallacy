@@ -5,5 +5,7 @@
 
   "block.gamblers_fallacy.slot_machine_block": "Slot Machine",
 
-  "itemgroup.gamblers_fallacy.gambling_items": "Gambler's Fallacy"
+  "itemgroup.gamblers_fallacy.gambling_items": "Gambler's Fallacy",
+
+  "stat.gamblers_fallacy.times_gambled": "Times Gambled"
 }
