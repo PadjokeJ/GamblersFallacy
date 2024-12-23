@@ -1,6 +1,7 @@
 package dev.padjokej.gamblersfallacy.items;
 
 import dev.padjokej.gamblersfallacy.component.ModDataComponentTypes;
+import net.minecraft.block.BlockState;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.AttributeModifiersComponent;
@@ -19,6 +20,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.World;
 
@@ -208,5 +210,9 @@ public class GamblingWeapon extends SwordItem {
         }
         this.isSpicy = true;
         world.playSound((PlayerEntity) null, player.getBlockPos(), SoundEvents.ENTITY_ZOMBIE_VILLAGER_CURE, SoundCategory.BLOCKS, 1f, 1f + (0.5f * world.random.nextFloat()));
+    }
+
+    public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
+        return !(miner.isCreative() && this.getState() == 3);
     }
 }
