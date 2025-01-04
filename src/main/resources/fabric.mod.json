@@ -2,9 +2,7 @@
 	"schemaVersion": 1,
 	"id": "gamblers_fallacy",
 
-	"entrypoints": {
-		"cardinal-components-entity": ["dev.padjokej.gamblersfallacy.component.ModCCAComponents"]
-	},
+
 	"custom": {
 		"cardinal-components": [
 			"gamblers_fallacy:pity"
@@ -30,7 +28,8 @@
 		],
 		"client": [
 			"dev.padjokej.gamblersfallacy.ModClient"
-		]
+		],
+		"cardinal-components-entity": ["dev.padjokej.gamblersfallacy.component.ModCCAComponents"]
 	},
 	"mixins": [
 		"gamblers_fallacy.mixins.json"
@@ -39,9 +38,7 @@
 		"fabricloader": ">=0.16.9",
 		"minecraft": "~1.21.1",
 		"java": ">=21",
+		"cardinal-components-entity": ">=6.1.1",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"cardinal-components": ">=6.1.1"
 	}
 }

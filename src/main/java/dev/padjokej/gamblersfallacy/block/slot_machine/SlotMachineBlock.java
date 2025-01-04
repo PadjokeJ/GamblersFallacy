@@ -124,6 +124,7 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
 
 
         if (rnd <= 1f/10000f){
+            ModCCAComponents.resetPity(player);
             return new ItemStack(ModWeapons.GAMBLING_WEAPON, 1);
         }
         if (rnd <= 1f/5000f){
