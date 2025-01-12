@@ -1,26 +1,27 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "# ",
-    "SL",
-    "_ "
-  ],
+  "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:spruce_planks"
-    },
-    "S": {
+    "C": {
       "item": "gamblers_fallacy:chip"
     },
     "L": {
       "item": "minecraft:lever"
     },
-    "_": {
+    "P": {
+      "item": "minecraft:spruce_planks"
+    },
+    "S": {
       "item": "minecraft:spruce_slab"
     }
   },
+  "pattern": [
+    "P ",
+    "CL",
+    "S "
+  ],
   "result": {
-    "id": "gamblers_fallacy:slot_machine_block",
-    "count": 1
+    "count": 1,
+    "id": "gamblers_fallacy:slot_machine_block"
   }
 }

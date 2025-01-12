@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gamblers_fallacy:item/gamblite_smithing_template"
+  }
+}

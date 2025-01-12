@@ -22,6 +22,11 @@ public class ModItemGroup {
                         entries.add(ModWeapons.GAMBLING_WEAPON);
                         entries.add(ModItems.DICE);
                         entries.add(ModItems.GAMBLITE);
+                        entries.add(ModItems.GAMBLITE_SMITHING_TEMPLATE);
+                        entries.add(ModItems.GAMBLITE_BOOTS);
+                        entries.add(ModItems.GAMBLITE_LEGGINGS);
+                        entries.add(ModItems.GAMBLITE_CHESTPLATE);
+                        entries.add(ModItems.GAMBLITE_HELMET);
                     }).build());
     public static void registerItemGroups() {
         GamblersFallacy.LOGGER.info("Registering Item Groups for " + GamblersFallacy.MOD_ID);

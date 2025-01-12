@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "gamblers_fallacy:chip"
+    },
+    "S": {
+      "item": "gamblers_fallacy:gamblite_smithing_template"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "gamblers_fallacy:gamblite_smithing_template"
+  }
+}

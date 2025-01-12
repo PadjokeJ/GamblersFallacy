@@ -3,8 +3,11 @@ package dev.padjokej.gamblersfallacy.items;
 import dev.padjokej.gamblersfallacy.GamblersFallacy;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.SmithingTemplateItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.resource.featuretoggle.FeatureFlag;
+import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
@@ -17,6 +20,8 @@ public class ModItems {
             new DiceItem(new Item.Settings()));
     public static final Item GAMBLITE = registerItem("gamblite",
             new Item(new Item.Settings()));
+    public static final Item GAMBLITE_SMITHING_TEMPLATE = registerItem("gamblite_smithing_template",
+            SmithingTemplateItem.of(Identifier.of(GamblersFallacy.MOD_ID, "gamblite"), FeatureFlags.VANILLA));
 
     public static final Item GAMBLITE_HELMET = registerItem("gamblite_helmet",
             new ModArmor(ArmorMaterials.GAMBLITE_ARMOR, ArmorItem.Type.HELMET, new Item.Settings()

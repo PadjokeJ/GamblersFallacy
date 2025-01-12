@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "template": {
+        "item": "gamblers_fallacy:gamblite_smithing_template"
+    },
+    "base": {
+        "item": "minecraft:diamond_leggings"
+    },
+    "addition": {
+        "item": "gamblers_fallacy:gamblite"
+    },
+    "result": {
+        "id": "gamblers_fallacy:gamblite_leggings"
+    }
+}

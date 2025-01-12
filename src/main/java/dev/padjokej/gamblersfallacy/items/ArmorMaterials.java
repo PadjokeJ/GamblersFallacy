@@ -23,8 +23,8 @@ public class ArmorMaterials {
                 map.put(ArmorItem.Type.CHESTPLATE, 2);
                 map.put(ArmorItem.Type.HELMET, 2);
                 map.put(ArmorItem.Type.BODY, 2);
-            }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, () -> Ingredient.ofItems(ModItems.GAMBLITE),
-                    List.of(new ArmorMaterial.Layer(Identifier.of(GamblersFallacy.MOD_ID, "gamblite"))), 0, 0));
+            }), 25, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, () -> Ingredient.ofItems(ModItems.GAMBLITE),
+                    List.of(new ArmorMaterial.Layer(Identifier.of(GamblersFallacy.MOD_ID, "gamblite"))), 2, 0));
 
     public static RegistryEntry<ArmorMaterial> registerArmorMaterial(String name, Supplier<ArmorMaterial> material){
         return Registry.registerReference(Registries.ARMOR_MATERIAL, Identifier.of(GamblersFallacy.MOD_ID, name), material.get());

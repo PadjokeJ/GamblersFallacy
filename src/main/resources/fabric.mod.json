@@ -26,6 +26,9 @@
 		"main": [
 			"dev.padjokej.gamblersfallacy.GamblersFallacy"
 		],
+		"fabric-datagen": [
+			"dev.padjokej.gamblersfallacy.GamblersFallacyDataGenerator"
+		],
 		"client": [
 			"dev.padjokej.gamblersfallacy.ModClient"
 		],
