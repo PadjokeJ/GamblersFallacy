@@ -2,6 +2,15 @@
   "item.gamblers_fallacy.chip": "Jeton",
   "item.gamblers_fallacy.gambling_chip": "Jeton de Pari",
   "item.gamblers_fallacy.dice": "Dé",
+
+  "item.gamblers_fallacy.gamblite": "Parite",
+  "item.gamblers_fallacy.gamblite_helmet": "Casque en Parite",
+  "item.gamblers_fallacy.gamblite_chestplate": "Plastron en Parite",
+  "item.gamblers_fallacy.gamblite_leggings": "Jambières en Parite",
+  "item.gamblers_fallacy.gamblite_boots": "Bottes en Parite",
+  "item.gamblers_fallacy.gamblite_smithing_template": "Modèle de Forge en Parite",
+  "trim_pattern.gamblers_fallacy.gamblite": "Amélioration en Parite",
+
   "item.gamblers_fallacy.gambling_weapon": "Lame du Flambeur",
 
   "block.gamblers_fallacy.slot_machine_block": "Machine à Sous",

@@ -2,7 +2,14 @@
   "item.gamblers_fallacy.chip": "Chip",
   "item.gamblers_fallacy.gambling_chip": "Gambling Chip",
   "item.gamblers_fallacy.dice": "Dice",
+  "item.gamblers_fallacy.gamblite": "Gamblite",
+  "item.gamblers_fallacy.gamblite_helmet": "Gamblite Helmet",
+  "item.gamblers_fallacy.gamblite_chestplate": "Gamblite Chestplate",
+  "item.gamblers_fallacy.gamblite_leggings": "Gamblite Leggings",
+  "item.gamblers_fallacy.gamblite_boots": "Gamblite Boots",
+  "item.gamblers_fallacy.gamblite_smithing_template": "Gamblite Smithing Template",
   "item.gamblers_fallacy.gambling_weapon": "Gambler's Blade",
+  "trim_pattern.gamblers_fallacy.gamblite": "Gamblite Upgrade",
 
   "block.gamblers_fallacy.slot_machine_block": "Slot Machine",
 
