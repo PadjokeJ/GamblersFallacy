@@ -15,5 +15,6 @@
 
   "block.gamblers_fallacy.slot_machine_block": "Machine à Sous",
 
-  "itemgroup.gamblers_fallacy.gambling_items": "L'illusion du Joueur"
+  "itemgroup.gamblers_fallacy.gambling_items": "L'illusion du Joueur",
+  "stat.gamblers_fallacy.times_gambled": "Utilisation de Machine à Sous"
 }
