@@ -181,6 +181,10 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
                 success = true;
                 yield 10;
             }
+            case GamblersFallacy.MOD_ID + ":chip" -> {
+                success = true;
+                yield 32;
+            }
             default -> 0;
         };
         if (!player.getAbilities().creativeMode && success)
