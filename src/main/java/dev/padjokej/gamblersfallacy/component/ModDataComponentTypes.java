@@ -13,6 +13,8 @@ import java.util.function.UnaryOperator;
 public class ModDataComponentTypes {
     public static final ComponentType<FloatProvider> WEAPON_STATE =
             register("state", builder -> builder.codec(FloatProvider.VALUE_CODEC));
+public static final ComponentType<FloatProvider> DICE_ROLL_VALUE =
+            register("roll_value", builder -> builder.codec(FloatProvider.VALUE_CODEC));
 
 
     private static <T> ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator) {

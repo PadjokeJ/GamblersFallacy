@@ -20,6 +20,7 @@ public class ModItemGroup {
                         entries.add(ModItems.GAMBLING_CHIP);
                         entries.add(ModBlocks.SLOT_MACHINE_BLOCK);
                         entries.add(ModWeapons.GAMBLING_WEAPON);
+                        entries.add(ModItems.DICE);
                     }).build());
     public static void registerItemGroups() {
         GamblersFallacy.LOGGER.info("Registering Item Groups for " + GamblersFallacy.MOD_ID);

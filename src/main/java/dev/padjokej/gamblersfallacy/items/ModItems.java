@@ -11,6 +11,9 @@ public class ModItems {
             new Item(new Item.Settings()));
     public static final Item GAMBLING_CHIP = registerItem("gambling_chip",
             new Item(new Item.Settings()));
+
+    public static final Item DICE = registerItem("dice",
+            new DiceItem(new Item.Settings()));
     public static void registerModItems()
     {
         GamblersFallacy.LOGGER.debug("Registering Mod Items for Gambler's Fallacy!");

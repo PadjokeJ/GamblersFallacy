@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gamblers_fallacy:item/dice_1"
+  },
+  "overrides": [
+    { "predicate": { "gamblers_fallacy:dice_model": 0.000 }, "model": "gamblers_fallacy:item/dice/dice_1" },
+    { "predicate": { "gamblers_fallacy:dice_model": 0.167 }, "model": "gamblers_fallacy:item/dice/dice_2" },
+    { "predicate": { "gamblers_fallacy:dice_model": 0.333 }, "model": "gamblers_fallacy:item/dice/dice_3" },
+    { "predicate": { "gamblers_fallacy:dice_model": 0.500 }, "model": "gamblers_fallacy:item/dice/dice_4" },
+    { "predicate": { "gamblers_fallacy:dice_model": 0.667 }, "model": "gamblers_fallacy:item/dice/dice_5" },
+    { "predicate": { "gamblers_fallacy:dice_model": 0.833 }, "model": "gamblers_fallacy:item/dice/dice_6" }
+  ]
+}
