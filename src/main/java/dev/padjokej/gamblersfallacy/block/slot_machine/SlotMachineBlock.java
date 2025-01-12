@@ -142,6 +142,9 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
         if (rnd <= 1f/500f){
             return new ItemStack(Items.IRON_INGOT, 10);
         }
+        if (rnd <= 1f/400f){
+            return new ItemStack(ModItems.GAMBLITE, 1);
+        }
         if (rnd <= 1f/200f){
             return new ItemStack(Items.COPPER_INGOT, 32);
         }

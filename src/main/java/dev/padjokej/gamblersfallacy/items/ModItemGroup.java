@@ -21,6 +21,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.SLOT_MACHINE_BLOCK);
                         entries.add(ModWeapons.GAMBLING_WEAPON);
                         entries.add(ModItems.DICE);
+                        entries.add(ModItems.GAMBLITE);
                     }).build());
     public static void registerItemGroups() {
         GamblersFallacy.LOGGER.info("Registering Item Groups for " + GamblersFallacy.MOD_ID);

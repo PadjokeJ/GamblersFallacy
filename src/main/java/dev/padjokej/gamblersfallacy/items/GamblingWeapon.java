@@ -11,9 +11,8 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
@@ -71,7 +70,15 @@ public class GamblingWeapon extends SwordItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        user.getItemCooldownManager().set(this, 100);
+        int cooldown = 100;
+
+        if (hasFullArmorSet(user)){
+            if (hasCorrectArmorSet(ArmorMaterials.GAMBLITE_ARMOR, user)){
+                cooldown = 40;
+            }
+        }
+
+        user.getItemCooldownManager().set(this, cooldown);
         if (world.isClient)
             return TypedActionResult.pass(user.getStackInHand(hand));
         RollState(world, user, hand);
@@ -207,5 +214,29 @@ public class GamblingWeapon extends SwordItem {
 
     public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
         return !(miner.isCreative() && this.getState() == 3);
+    }
+
+    private boolean hasFullArmorSet(PlayerEntity player){
+        ItemStack boots = player.getInventory().getArmorStack(0);
+        ItemStack legs  = player.getInventory().getArmorStack(1);
+        ItemStack chest = player.getInventory().getArmorStack(2);
+        ItemStack head  = player.getInventory().getArmorStack(3);
+
+        return !head.isEmpty() && !chest.isEmpty() && !legs.isEmpty() && !boots.isEmpty();
+    }
+
+    private boolean hasCorrectArmorSet(RegistryEntry<ArmorMaterial> material, PlayerEntity player){
+        for (ItemStack armorStack: player.getInventory().armor){
+            if (!(armorStack.getItem() instanceof ArmorItem)){
+                return false;
+            }
+        }
+
+        ArmorItem boots = ((ArmorItem) player.getInventory().getArmorStack(0).getItem());
+        ArmorItem legs  = ((ArmorItem) player.getInventory().getArmorStack(1).getItem());
+        ArmorItem chest = ((ArmorItem) player.getInventory().getArmorStack(2).getItem());
+        ArmorItem head  = ((ArmorItem) player.getInventory().getArmorStack(3).getItem());
+
+        return head.getMaterial() == material && chest.getMaterial() == material && legs.getMaterial() == material && boots.getMaterial() == material;
     }
 }

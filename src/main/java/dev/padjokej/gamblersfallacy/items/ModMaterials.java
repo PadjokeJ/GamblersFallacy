@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 
 public enum ModMaterials implements ToolMaterial {
     GAMBLING_MATERIAL(BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
-            1200, 9.0F, 4.0F, 0, () -> Ingredient.ofItems(Items.DIAMOND));
+            1200, 9.0F, 4.0F, 0, () -> Ingredient.ofItems(ModItems.GAMBLITE));
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;
