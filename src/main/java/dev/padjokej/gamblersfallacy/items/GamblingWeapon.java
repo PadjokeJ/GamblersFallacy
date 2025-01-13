@@ -55,7 +55,7 @@ public class GamblingWeapon extends SwordItem {
             if (this.isIcy) {
                 attacked.addStatusEffect(new StatusEffectInstance(
                         StatusEffects.SLOWNESS,
-                        80, 2
+                        50, 2
                 ));
             }
             if (this.isBerserk) {
