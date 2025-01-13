@@ -13,6 +13,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
@@ -107,6 +108,7 @@ public class GamblingWeapon extends SwordItem {
                             new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, 9,
                                     EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                     .build());
+            stack.set(DataComponentTypes.TOOL, ToolMaterials.NETHERITE.createComponent(BlockTags.AXE_MINEABLE));
             setState(0, stack, player);
             return;
         }
@@ -122,6 +124,7 @@ public class GamblingWeapon extends SwordItem {
                             new EntityAttributeModifier(Identifier.ofVanilla("base_entity_interaction_range"), 1,
                                     EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                     .build());
+            stack.set(DataComponentTypes.TOOL, null);
             setState(1, stack, player);
             return;
         }
@@ -137,6 +140,7 @@ public class GamblingWeapon extends SwordItem {
                             new EntityAttributeModifier(Identifier.ofVanilla("base_entity_interaction_range"), 0.5,
                                     EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                     .build());
+            stack.set(DataComponentTypes.TOOL, ToolMaterials.NETHERITE.createComponent(BlockTags.HOE_MINEABLE));
             setState(2, stack, player);
             return;
         } // sword
@@ -148,6 +152,7 @@ public class GamblingWeapon extends SwordItem {
                         new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, 7,
                                 EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                 .build());
+        stack.set(DataComponentTypes.TOOL, null);
         setState(3, stack, player);
 
     }
