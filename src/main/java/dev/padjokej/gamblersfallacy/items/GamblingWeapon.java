@@ -158,14 +158,14 @@ public class GamblingWeapon extends SwordItem {
         if (rnd <= 0.25f) {
             player.addStatusEffect(new StatusEffectInstance(
                     StatusEffects.SPEED,
-                    50, 1
+                    80, 2
             ));
             return;
         }
         if (rnd <= 0.5f) {
             player.addStatusEffect(new StatusEffectInstance(
                     StatusEffects.REGENERATION,
-                    200, 0
+                    80, 4
             ));
             return;
         }
@@ -178,7 +178,7 @@ public class GamblingWeapon extends SwordItem {
         }
         player.addStatusEffect(new StatusEffectInstance(
                 StatusEffects.STRENGTH,
-                40, 1
+                80, 3
         ));
     }
 
