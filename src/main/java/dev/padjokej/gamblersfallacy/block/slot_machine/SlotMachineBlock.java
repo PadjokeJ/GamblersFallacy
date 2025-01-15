@@ -38,7 +38,7 @@ import net.minecraft.world.World;
 import javax.swing.text.html.BlockView;
 
 public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProvider{
-    public static final int maxPity = 4000;
+    public static final int maxPity = 8000;
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
 
@@ -134,7 +134,7 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
             return new ItemStack(Items.DIAMOND, 1);
         }
         if (rnd <= 1f/1500f){
-            return new ItemStack(ModItems.GAMBLITE_SMITHING_TEMPLATE, 16);
+            return new ItemStack(ModItems.GAMBLITE_SMITHING_TEMPLATE, 1);
         }
         if (rnd <= 1f/1000f){
             return new ItemStack(Blocks.SCULK_SENSOR, 16);
