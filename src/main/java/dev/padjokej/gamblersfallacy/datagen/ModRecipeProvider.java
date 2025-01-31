@@ -38,7 +38,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Items.GLASS)
                 .criterion(hasItem(Items.GLASS), conditionsFromItem(Items.GLASS))
                 .offerTo(recipeExporter);
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CHIP, 8)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CHIP, 4)
                 .input(Items.IRON_NUGGET)
                 .input(Items.IRON_NUGGET)
                 .input(Items.GOLD_NUGGET)

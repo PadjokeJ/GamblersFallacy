@@ -38,7 +38,7 @@ import net.minecraft.world.World;
 import javax.swing.text.html.BlockView;
 
 public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProvider{
-    public static final int maxPity = 8000;
+    public static final int maxPity = 20000;
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
 
@@ -123,14 +123,14 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
 
 
 
-        if (rnd <= 1f/10000f){
+        if (rnd <= 1f/20000f){
             ModCCAComponents.resetPity(player);
             return new ItemStack(ModWeapons.GAMBLING_WEAPON, 1);
         }
         if (rnd <= 1f/5000f){
             return new ItemStack(Items.ANCIENT_DEBRIS, 1);
         }
-        if (rnd <= 1f/2000f){
+        if (rnd <= 1f/2500f){
             return new ItemStack(Items.DIAMOND, 1);
         }
         if (rnd <= 1f/1500f){
@@ -139,24 +139,26 @@ public class SlotMachineBlock extends BlockWithEntity implements BlockEntityProv
         if (rnd <= 1f/1000f){
             return new ItemStack(Blocks.SCULK_SENSOR, 16);
         }
-
-        if (rnd <= 1f/750f){
-            return new ItemStack(Items.GOLD_INGOT, 5);
+        if (rnd <= 1f/850f){
+            return new ItemStack(Items.GOLD_INGOT, 2);
         }
-        if (rnd <= 1f/500f){
-            return new ItemStack(Items.IRON_INGOT, 10);
+        if (rnd <= 1f/750f) {
+            return new ItemStack(Items.SLIME_BALL, 4);
+        }
+        if (rnd <= 1f/600f){
+            return new ItemStack(Items.IRON_INGOT, 1);
         }
         if (rnd <= 1f/400f){
             return new ItemStack(ModItems.GAMBLITE, 1);
         }
         if (rnd <= 1f/200f){
-            return new ItemStack(Items.COPPER_INGOT, 32);
+            return new ItemStack(Items.COPPER_INGOT, 8);
         }
         if (rnd <= 1f/100f) {
-            return new ItemStack(Blocks.COBBLESTONE, 32);
+            return new ItemStack(Blocks.COBBLESTONE, 4);
         }
         if (rnd <= 1f/50f){
-            return new ItemStack(Blocks.SPRUCE_PLANKS, 16);
+            return new ItemStack(Blocks.SPRUCE_PLANKS, 2);
         }
         if (rnd <= 1f/15f){
             return new ItemStack(ModItems.GAMBLING_CHIP, 1);

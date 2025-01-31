@@ -19,8 +19,8 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.CHIP, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GAMBLING_CHIP, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.CHIP, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.GAMBLING_CHIP, Models.GENERATED);
         itemModelGenerator.register(ModItems.GAMBLITE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.GAMBLITE_SMITHING_TEMPLATE, Models.GENERATED);

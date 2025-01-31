@@ -1,8 +1,8 @@
-// 1.21.1	2025-01-13T17:17:07.7768697	Gambler's Fallacy/Recipes
+// 1.21.1	2025-01-31T16:51:48.7203259	Gambler's Fallacy/Recipes
 9f30e5fda43d70c530144201dcd4054fa2b334c0 data\gamblers_fallacy\recipe\gamblite_smithing_template.json
 224b563a02fb10055fa9670c15522ce090c41342 data\gamblers_fallacy\recipe\dice.json
 d4b418297b17ec880003fa35d718cb811a60b148 data\gamblers_fallacy\advancement\recipes\misc\dice.json
-5f9f1346966e29357c6348916a29d7f09c0a8680 data\gamblers_fallacy\recipe\chip.json
+099d67178cfb8c6ff735494945c2fcd375e7f765 data\gamblers_fallacy\recipe\chip.json
 fbfaa907ae87418c66e70a993eab1994c2610169 data\gamblers_fallacy\recipe\slot_machine_block.json
 35f70fc3df2bd83d44eb6a6c19fdf1f31d3133b2 data\gamblers_fallacy\advancement\recipes\misc\chip.json
 26b62db9857064fae366d3ff36f1195d068d3a2e data\gamblers_fallacy\advancement\recipes\misc\slot_machine_block.json

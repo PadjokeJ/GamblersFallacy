@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gamblers_fallacy:item/chip"
+  },
+  "overrides": [
+    { "predicate": { "gamblers_fallacy:chip_model": 0.0 }, "model": "gamblers_fallacy:item/chip_model" },
+    { "predicate": { "gamblers_fallacy:chip_model": 0.5 }, "model": "gamblers_fallacy:item/chip_face" }
+  ]
+}

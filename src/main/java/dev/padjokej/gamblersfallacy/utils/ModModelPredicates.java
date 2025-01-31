@@ -25,11 +25,29 @@ public class ModModelPredicates {
         );
         ModelPredicateProviderRegistry.register(ModItems.DICE, Identifier.of(GamblersFallacy.MOD_ID, "dice_model"),
                 (stack, world, entity, seed) -> {
-                    if (stack.get(ModDataComponentTypes.DICE_ROLL_VALUE) != null)
-                        return stack.get(ModDataComponentTypes.DICE_ROLL_VALUE).get(Random.create());
+                    if (stack.get(ModDataComponentTypes.ROLL_VALUE) != null)
+                        return stack.get(ModDataComponentTypes.ROLL_VALUE).get(Random.create());
                     else
                         return 0f;
                 }
         );
+        ModelPredicateProviderRegistry.register(ModItems.GAMBLING_CHIP, Identifier.of(GamblersFallacy.MOD_ID, "gambling_chip_model"),
+                (stack, world, entity, seed) -> {
+                    if (stack.get(ModDataComponentTypes.ROLL_VALUE) != null)
+                        return stack.get(ModDataComponentTypes.ROLL_VALUE).get(Random.create());
+                    else
+                        return 0f;
+                }
+        );
+        ModelPredicateProviderRegistry.register(ModItems.CHIP, Identifier.of(GamblersFallacy.MOD_ID, "chip_model"),
+                (stack, world, entity, seed) -> {
+                    if (stack.get(ModDataComponentTypes.ROLL_VALUE) != null)
+                        return stack.get(ModDataComponentTypes.ROLL_VALUE).get(Random.create());
+                    else
+                        return 0f;
+                }
+        );
+
+
     }
 }
