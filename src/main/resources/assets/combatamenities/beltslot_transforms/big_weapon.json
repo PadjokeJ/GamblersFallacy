@@ -1,8 +1,8 @@
 {
   "item": "gamblers_fallacy:gambling_weapon",
-  "scale": [1.5, 1.5, 1.5],
-  "rotation": [0.0, 0.0, 0.0],
-  "translation": [0.0, 0.0, 0.0],
+  "scale": [1.25, 1.25, 1.25],
+  "rotation": [0.0, 0.0, -12.25],
+  "translation": [0.1, 0.05, -0.135],
   "transformationMode": "GUI",
   "sway": 0.5
 }

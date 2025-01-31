@@ -34,9 +34,6 @@
 		],
 		"cardinal-components-entity": ["dev.padjokej.gamblersfallacy.component.ModCCAComponents"]
 	},
-	"mixins": [
-		"gamblers_fallacy.mixins.json"
-	],
 	"depends": {
 		"fabricloader": ">=0.16.9",
 		"minecraft": "~1.21.1",
