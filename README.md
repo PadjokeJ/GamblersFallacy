@@ -1,2 +1,3 @@
 # GamblersFallacy
-Minecraft gambling mod
+Minecraft gambling mod  
+Downloadable on [Modrinth](https://modrinth.com/gamblers-fallacy)
